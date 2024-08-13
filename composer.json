@@ -1,0 +1,32 @@
+{
+    "name": "dipesh79/laravel-seo-manager",
+    "description": "SEO for laravel web application",
+    "keywords": ["laravel", "seo"],
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Dipesh79\\LaravelSeoManager\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Dipesh Khanal",
+            "email": "dipeshkhanal79@gmail.com",
+            "homepage": "https://khanaldipesh.com.np",
+            "role": "Maintainer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^8.1|^8.2",
+        "spatie/laravel-medialibrary": "^10.0|^11.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Dipesh79\\LaravelSeoManager\\LaravelSeoManagerServiceProvider"
+            ]
+        }
+    }
+}
