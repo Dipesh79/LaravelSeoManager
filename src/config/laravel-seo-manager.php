@@ -12,9 +12,9 @@ return [
     'pagination_limit' => 10,
 
     /**
-     * Default meta-title for the application.
+     * Default title for the application.
      *
-     * The title will be appended to the meta-title of the page.
+     * The title will be used as the title of the page.
      */
     'title' => 'Title',
 
@@ -67,7 +67,7 @@ return [
          *
          * The URL will be used as the meta-og-url of the page.
          */
-        'url' => 'https://khanaldipesh.com.np/package/laravel-seo',
+        'url' => 'https://khanaldipesh.com.np/package/laravel-seo-manager',
     ],
     'twitter' => [
 
@@ -128,7 +128,7 @@ return [
          *
          * The image will be used as the meta-schema-image of the page.
          */
-        'url' => 'https://khaldipesh.com.np/package/laravel-seo',
+        'url' => 'https://khaldipesh.com.np/package/laravel-seo-manager',
     ]
 
 ];
