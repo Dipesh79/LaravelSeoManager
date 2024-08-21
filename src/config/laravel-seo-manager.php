@@ -129,15 +129,6 @@ return [
          * The image will be used as the meta-schema-image of the page.
          */
         'url' => 'https://khaldipesh.com.np/package/laravel-seo',
-    ],
-    /**
-     * Excluded URLs While generating Static Url For SEO Manager. You can add the URL pattern to exclude from the SEO Manager.
-     * Note: The URL pattern should be in the format of fnmatch. And the URL should be in the format of the route URI.
-     *
-     * All the unauthenticated routes will be excluded by default.
-     */
-    'excluded_urls' => [
-        'password/*'
-    ],
+    ]
 
 ];
