@@ -124,11 +124,11 @@ return [
         'description' => 'Description',
 
         /**
-         * Default meta-schema-image for the application.
+         * Default meta-schema-url for the application.
          *
-         * The image will be used as the meta-schema-image of the page.
+         * The url will be used as the meta-schema-url of the page.
          */
-        'url' => 'https://via.placeholder.com/1200x630',
+        'url' => 'https://khanaldipesh.com.np/package/laravel-seo-manager',
     ]
 
 ];
