@@ -22,6 +22,9 @@
             <form action="{{ route('admin.seo.index') }}" method="GET" class="d-flex">
                 <input type="text" name="search" class="form-control me-2" value="{{ $search }}" placeholder="Search...">
                 <button type="submit" class="btn btn-primary">Search</button>
+                @if ($search)
+                    <a href="{{ route('admin.seo.index') }}" class="btn btn-danger ms-2" title="Clear Search">X</a>
+                @endif
             </form>
         </div>
 
@@ -58,7 +61,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="6" class="text-center">No tags found.</td>
+                        <td colspan="3" class="text-center">No tags found.</td>
                     </tr>
                 @endforelse
                 </tbody>
@@ -73,7 +76,7 @@
 
     @push('scripts')
         <script>
-            document.getElementById('generate-form').addEventListener('submit', function() {
+            document.getElementById('generate-form').addEventListener('submit', function () {
                 document.getElementById('generate-btn').disabled = true;
                 document.getElementById('generate-text').style.display = 'none';
                 document.getElementById('spinner').style.display = 'inline-block';

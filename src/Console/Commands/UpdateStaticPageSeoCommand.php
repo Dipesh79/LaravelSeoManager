@@ -36,7 +36,6 @@ class UpdateStaticPageSeoCommand extends Command
     public function handle(): void
     {
         $this->info('SEO: Generating Static Pages Urls');
-        $excludedUris = config('laravel-seo-manager.excluded_urls');
         $routes = collect(Route::getRoutes())->filter(function ($route) {
             return isset($route->action['middleware']) && in_array('web',
                     $route->action['middleware']) && !in_array('auth',
@@ -45,7 +44,7 @@ class UpdateStaticPageSeoCommand extends Command
         $bar = $this->output->createProgressBar($routes->count());
 
         foreach ($routes as $route) {
-            if ($this->isExcludedUri($route->uri, $excludedUris) || $this->hasDynamicParameters($route->uri)) {
+            if ($this->hasDynamicParameters($route->uri)) {
                 continue;
             }
             Seo::firstOrCreate(['uri' => $route->uri], ['type' => 'static']);
@@ -54,23 +53,6 @@ class UpdateStaticPageSeoCommand extends Command
         $bar->finish();
         $this->line('');
         $this->info('SEO: Static Pages Urls Generated Successfully');
-    }
-
-    /**
-     * Check if the given URI is excluded based on the patterns in the configuration.
-     *
-     * @param string $uri The URI to check.
-     * @param array $excludedUris The list of excluded URI patterns.
-     * @return bool True if the URI is excluded, false otherwise.
-     */
-    private function isExcludedUri(string $uri, array $excludedUris): bool
-    {
-        foreach ($excludedUris as $pattern) {
-            if (fnmatch($pattern, $uri)) {
-                return true;
-            }
-        }
-        return false;
     }
 
     /**
