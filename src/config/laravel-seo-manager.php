@@ -128,7 +128,7 @@ return [
          *
          * The image will be used as the meta-schema-image of the page.
          */
-        'url' => 'https://khaldipesh.com.np/package/laravel-seo-manager',
+        'url' => 'https://via.placeholder.com/1200x630',
     ]
 
 ];
