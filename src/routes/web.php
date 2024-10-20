@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::controller(SEOController::class)
     ->prefix('admin/seo') // Prefix all routes with 'admin/seo'
     ->as('admin.seo.') // Name all routes with the 'admin.seo.' prefix
-    ->middleware(['web', 'auth']) // Apply 'web' and 'auth' middleware to all routes
+    ->middleware(config('laravel-seo-manager.middleware'))
     ->group(function () {
         // Route to display the list of SEO entries
         Route::get('/', 'index')->name('index');
@@ -41,5 +41,5 @@ Route::controller(SEOController::class)
         Route::delete('/delete/{id}', 'destroy')->name('delete');
 
         // Route to generate static pages for SEO
-        Route::post('/generate-static-pages','generateStaticPages')->name('generate-static-pages');
+        Route::post('/generate-static-pages', 'generateStaticPages')->name('generate-static-pages');
     });
