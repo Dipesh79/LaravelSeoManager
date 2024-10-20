@@ -19,7 +19,7 @@ class IndexRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return auth()->user()->canAccessSeoManager();
+        return auth()->check() && auth()->user()->canAccessSeoManager();
     }
 
     /**

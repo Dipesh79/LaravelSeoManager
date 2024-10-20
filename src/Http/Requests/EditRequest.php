@@ -19,7 +19,7 @@ class EditRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return auth()->user()->canUpdateSeo();
+        return auth()->check() && auth()->user()->canUpdateSeo();
     }
 
     /**
