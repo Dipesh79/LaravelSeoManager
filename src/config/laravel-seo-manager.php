@@ -2,6 +2,11 @@
 
 return [
     /**
+     * Middleware for SEO Manager Route.
+     */
+    'middleware' => ['web', 'auth'],
+
+    /**
      * Redirect URL from SEO Manager Dashboard.
      */
     'redirect_url' => '/home',

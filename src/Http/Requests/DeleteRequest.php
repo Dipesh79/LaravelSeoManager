@@ -19,7 +19,7 @@ class DeleteRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return auth()->user()->canDeleteSeo();
+        return auth()->check() && auth()->user()->canDeleteSeo();
     }
 
     /**

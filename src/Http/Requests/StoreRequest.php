@@ -19,7 +19,7 @@ class StoreRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return auth()->user()->canCreateSeo();
+        return auth()->check() && auth()->user()->canCreateSeo();
     }
 
     /**

@@ -19,7 +19,7 @@ class ShowRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return auth()->user()->canViewSeo();
+        return auth()->check() && auth()->user()->canViewSeo();
     }
 
     /**
